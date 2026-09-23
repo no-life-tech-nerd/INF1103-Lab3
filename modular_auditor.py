@@ -32,8 +32,10 @@ def process_delivery(current_total: int, new_value: int) -> int:
 
 def calculate_tax(amount: int) -> float:
     return (0.1 * amount)
-#
-# def generate_report(total_units, failed_attempts) -> str:
+
+def generate_report(total_units: int, failed_attempts: int) -> None:
+    print(f"Total Units Processed: {str(total_units)}")
+    print(f"Number of Failed/Rejected Entries: {str(failed_attempts)}")
 
 userData = ""
 while userData != "quit":
@@ -44,3 +46,4 @@ while userData != "quit":
     if userData > 0:
         inventory = process_delivery(inventory, userData)
         print(calculate_tax(userData))
+generate_report(inventory, errorCount)
