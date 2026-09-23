@@ -29,8 +29,9 @@ def process_delivery(current_total: int, new_value: int) -> int:
     if new_total > 500:
         print("Inventory has overstocked!")
     return new_total
-#
-# def calculate_tax(amount) -> float:
+
+def calculate_tax(amount: int) -> float:
+    return (0.1 * amount)
 #
 # def generate_report(total_units, failed_attempts) -> str:
 
@@ -40,5 +41,6 @@ while userData != "quit":
     if userData == "quit":
         print("Goodbye!")
         break
-    inventory = process_delivery(inventory, userData)
-
+    if userData > 0:
+        inventory = process_delivery(inventory, userData)
+        print(calculate_tax(userData))
