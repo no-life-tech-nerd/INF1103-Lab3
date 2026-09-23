@@ -27,8 +27,11 @@ def get_value_input() -> float:
             continue
     return 0
 
-# def process_delivery(current_total, new_value) -> float:
-#     return
+def process_delivery(current_total: float, new_value: float) -> float:
+    new_total = float(current_total) + float(new_value)
+    if new_total > 500:
+        print("Inventory has overstocked!")
+    return new_total
 #
 # def calculate_tax(amount) -> float:
 #
